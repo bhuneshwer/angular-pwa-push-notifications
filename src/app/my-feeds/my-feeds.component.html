@@ -1,30 +1,31 @@
-<md-card>
-  <md-card-header>
-    <md-card-title>App Shell</md-card-title>
-    <md-card-subtitle>It would be cool to have this UI available offline</md-card-subtitle>
-  </md-card-header>
-  <md-card-actions>
-    <button md-raised-button (click)="loadTimeLine('angular')">Load @angular timeline</button>
-    <button md-raised-button (click)="loadTimeLine('')">Load my timeline</button>
-    <button md-raised-button (click)="loadFavorites('angular')">Load @angular favorites</button>
-    <button md-raised-button (click)="loadFavorites('')">Load my favorites</button>
-  </md-card-actions>
-  <md-card-content>
-
-    <md-nav-list>
-      <md-divider></md-divider>
-      <a md-list-item *ngFor="let tweet of tweets" href="{{ 'https://twitter.com/statuses/' + tweet.id_str }}">
-        <img md-list-avatar [src]="tweet.user.profile_image_url_https" alt="{{tweet.user.name}}">
-        <h3 md-line>{{tweet.user.name}}</h3>
-        <p md-line>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>App Shell</mat-card-title>
+    <mat-card-subtitle>It would be cool to have this UI available offline</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <button mat-raised-button (click)="loadTimeLine('angular')">
+      <mat-icon>list</mat-icon>Load @angular timeline</button>
+    <button mat-raised-button (click)="loadTimeLine('')">
+      <mat-icon>list</mat-icon>Load my timeline</button>
+    <button mat-raised-button (click)="loadFavorites('angular')">
+      <mat-icon>favorite</mat-icon>Load @angular favorites</button>
+    <button mat-raised-button (click)="loadFavorites('')">
+      <mat-icon>favorite</mat-icon>Load my favorites</button>
+  </mat-card-actions>
+  <mat-card-content>
+    <mat-nav-list>
+      <mat-divider></mat-divider>
+      <a mat-list-item *ngFor="let tweet of tweets" href="{{ 'https://twitter.com/statuses/' + tweet.id_str }}">
+        <img mat-list-avatar [src]="tweet.user.profile_image_url_https" alt="{{tweet.user.name}}">
+        <h3 mat-line>{{tweet.user.name}}</h3>
+        <p mat-line>
           <span>{{tweet.text}}</span>
         </p>
-        <p md-line>
+        <p mat-line>
           <small>{{tweet.created_at}}</small>
         </p>
       </a>
-    </md-nav-list>
-
-  </md-card-content>
-
-</md-card>
+    </mat-nav-list>
+  </mat-card-content>
+</mat-card>
