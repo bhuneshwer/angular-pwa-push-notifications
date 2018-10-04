@@ -79,3 +79,18 @@ import {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+// interface NgServiceWorker {
+//   push: Observable<any>;
+//   registerForPush(): Observable<NgPushRegistration>;
+//   // some other methods for talking to the worker.
+// }
+
+// interface NgPushRegistration {
+//   auth(): string;
+//   key(method: string = 'p256dh'): string;
+//   url: string;
+//   unsubscribe(): Observable<boolean>;
+//   toJSON();
+// }

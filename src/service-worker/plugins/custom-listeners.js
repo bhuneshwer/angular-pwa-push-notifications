@@ -7,6 +7,7 @@ export class CustomListenersImpl {
   setup (ops) {}
 
   constructor () {
+    
     self.addEventListener('notificationclick', function (event) {
       console.log('On notification click: ', event)
       event.notification.close()

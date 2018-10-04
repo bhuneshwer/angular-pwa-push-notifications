@@ -1,22 +1,25 @@
-import {bootstrapServiceWorker} from '@angular/service-worker';
-import {Dynamic, FreshnessStrategy, PerformanceStrategy} from '@angular/service-worker/plugins/dynamic';
-import {ExternalContentCache} from '@angular/service-worker/plugins/external';
-import {RouteRedirection} from '@angular/service-worker/plugins/routes';
-import {StaticContentCache} from '@angular/service-worker/plugins/static';
-import {Push} from '@angular/service-worker/plugins/push';
+// import {
+//   ServiceWorkerModule,
+//   Dynamic,
+//   FreshnessStrategy,
+//   PerformanceStrategy,
+//   ExternalContentCache,
+//   RouteRedirection,
+//   StaticContentCache,
+//   SwUpdate
+// } from '@angular/service-worker';
+
+
+
+
+import {ServiceWorkerModule,SwPush, SwUpdate} from '@angular/service-worker';
+import { Observable } from 'rxjs/Observable';
+
 import {CustomListeners} from './plugins/custom-listeners';
 
-bootstrapServiceWorker({
+ServiceWorkerModule({
   manifestUrl: 'ngsw-manifest.json',
   plugins: [
-    StaticContentCache(),
-    Dynamic([
-      new FreshnessStrategy(),
-      new PerformanceStrategy(),
-    ]),
-    ExternalContentCache(),
-    RouteRedirection(),
-    Push(),
     CustomListeners()
   ],
 });
